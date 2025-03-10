@@ -4,7 +4,8 @@
   "description": "API Node.js avec Express, Sequelize, JWT et bcrypt pour la gestion des utilisateurs",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -15,6 +16,6 @@
     "mysql2": "^3.13.0",
     "sequelize": "^6.6.5"
   },
-  "author": "",
+    "author": "",
   "license": "ISC"
 }
