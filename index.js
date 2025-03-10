@@ -10,8 +10,8 @@ const secretKey = 'your_secret_key';
 
 app.use(bodyParser.json());
 
-const sequelize = new Sequelize('database', 'username', 'password', {
-  host: 'localhost',
+const sequelize = new Sequelize('database', process.env.USER, process.env.PASSWORD, {
+  host: process.env.URL,
   dialect: 'mysql'
 });
 
