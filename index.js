@@ -1,1 +1,0 @@
-console.log('auth-app/index.js');
