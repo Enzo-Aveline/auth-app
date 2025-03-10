@@ -51,8 +51,11 @@ app.post('/login', async (req, res) => {
 
 const authenticate = (req, res, next) => {
   const token = req.headers['authorization'];
-  if (token) {
-    jwt.verify(token, secretKey, (err, decoded) => {
+
+  if (token && token.startsWith('Bearer ')) {
+    const tokenValue = token.split(' ')[1];
+
+    jwt.verify(tokenValue, secretKey, (err, decoded) => {
       if (err) {
         return res.status(401).json({ error: 'Invalid token' });
       } else {
@@ -98,7 +101,7 @@ app.delete('/users/:id', authenticate, async (req, res) => {
     where: { id: req.params.id }
   });
   if (deleted) {
-    res.status(204).json();
+    res.status(204).json('User deleted');
   } else {
     res.status(404).json({ error: 'User not found' });
   }
