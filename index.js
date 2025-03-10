@@ -104,6 +104,10 @@ app.delete('/users/:id', authenticate, async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to the auth-app' });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
