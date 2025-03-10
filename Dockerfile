@@ -14,7 +14,7 @@ RUN npm install --only=production
 COPY . .
 
 # Exposer le port utilisé par le service
-EXPOSE 4000
+EXPOSE 3000
 
 # Définir la commande par défaut pour démarrer l'application
 CMD ["node", "index.js"]
